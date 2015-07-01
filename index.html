@@ -126,6 +126,7 @@
             <th>Subgroup Description</th>
             <th>Start Date</th>
             <th>End Date</th>
+            <th>Region</th>
           </tr>
         </thead>
       </table>
@@ -319,7 +320,8 @@ return d.key; });
       function(d) { return d.subgroupType; },
       function(d) { return d.subgroupDescription; },
       function(d) { return d.startDate; },
-      function(d) { return d.endDate; }
+      function(d) { return d.endDate; },
+      function(d) { return d.region; }
     ])
     .sortBy(function(d){ return d.publicationYear; })
     .order(d3.descending);
