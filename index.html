@@ -203,12 +203,20 @@ select.on('change', change)     //on change this function happens, can use this 
         }); */
         //dc charts action on change
        
+    //initilise the forest-plot with APSGN data currently selected 
+    function initForest(){ outcomeSpecificDim.filterAll();
+        outcomeSpecificDim.filterExact('APSGN');
+        dc.redrawAll();
+        redraw(); //is the code to draw the forest plot data
+    }
+    
+       
     function change(){ outcomeSpecificDim.filterAll();
         outcomeSpecificDim.filterExact(d3.select('select').property('value'));
         dc.redrawAll();
         redraw(); //is the code to draw the forest plot data
     }
-        
+      
     //custom forest plot action on change  
     function redraw(){
         filteredData = outcomeSpecificDim.top(Infinity);
@@ -532,6 +540,7 @@ d3.select("#update-forest").append("input")
     .attr('value', 'Draw/Update Forest Plot')
     .on('click', redraw2);
 
+initForest();
   
 });
   
