@@ -120,8 +120,8 @@
         <thead>
           <tr class='header'>
             <th>Publication Year</th>
-	    <th>Authors</th>
-            <th>Outcome Specific</th>
+	    <th>Study</th>
+            <th>Outcome reported</th>
             <th>Subgroup Type</th>
             <th>Subgroup Description</th>
             <th>Start Date</th>
@@ -321,7 +321,7 @@ return d.key; });
       function(d) { return d.startDate; },
       function(d) { return d.endDate; }
     ])
-    .sortBy(function(d){ return d.startDate; })
+    .sortBy(function(d){ return d.publicationYear; })
     .order(d3.descending);
 
   // Render the Charts
