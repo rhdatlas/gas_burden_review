@@ -204,6 +204,12 @@ select.on('change', change)     //on change this function happens, can use this 
         .text(function (d) { return d })
         }); */
         //dc charts action on change
+    
+     function initForest(){ outcomeSpecificDim.filterAll();
+        outcomeSpecificDim.filterExact('APSGN');
+        dc.redrawAll();
+        redraw(); //is the code to draw the forest plot data
+    }
        
     function change(){ outcomeSpecificDim.filterAll();
         outcomeSpecificDim.filterExact(d3.select('select').property('value'));
@@ -218,11 +224,6 @@ select.on('change', change)     //on change this function happens, can use this 
         forest(filteredData); 
     }
 
-    function update(){ 
-        first = facts.outcomeSpecific;
-        value = first[1];
-        console.log(value);
-    }
 
     function redraw2(){
             filteredData = countryDimension.top(Infinity);
@@ -535,6 +536,7 @@ d3.select("#update-forest").append("input")
     .attr('value', 'Draw/Update Forest Plot')
     .on('click', redraw2);
 
+initForest();
   
 });
   
