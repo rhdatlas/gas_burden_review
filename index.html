@@ -311,11 +311,9 @@ return d.key; });
       function(d) { return d.subgroupType; },
       function(d) { return d.subgroupDescription; },
       function(d) { return d.startDate; },
-      function(d) { return d.endDate; },
-      function(d) { return d.author; }
-          
+      function(d) { return d.endDate; }
     ])
-    .sortBy(function(d){ return d.studyID; })
+    .sortBy(function(d){ return d.startDate; })
     .order(d3.descending);
 
   // Render the Charts
